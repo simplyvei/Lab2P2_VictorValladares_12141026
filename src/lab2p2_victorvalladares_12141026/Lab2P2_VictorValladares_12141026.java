@@ -110,8 +110,8 @@ public class Lab2P2_VictorValladares_12141026 {
     public static void imprimirPos(){
         System.out.print("Ingrese la posicion que desea imprimir: ");
         int pos = lea.nextInt();
+        System.out.println("-----------------------------------------------");
         System.out.println(lista.get(pos).toString());
-        System.out.println("");
     }
     public static void imprimirCompleta(){
         for (Animales animales : lista){
@@ -124,6 +124,7 @@ public class Lab2P2_VictorValladares_12141026 {
         lea.nextLine();
         System.out.print("Ingrese el nombre cientifico del animal que desea imprimir: ");
         String nombre = lea.nextLine();
+        System.out.println("-----------------------------------------------");
         for (Animales animales : lista){
             if (nombre.equals(animales.getNombreC())){
                 break;
@@ -135,7 +136,6 @@ public class Lab2P2_VictorValladares_12141026 {
             pos --;
         }
         System.out.println(lista.get(pos).toString());
-        System.out.println("");
     }
     public static void alimentar(){
         System.out.print("Ingrese la posicion del animal que va a comer: ");
