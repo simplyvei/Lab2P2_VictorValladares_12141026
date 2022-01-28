@@ -46,16 +46,15 @@ public class Lab2P2_VictorValladares_12141026 {
         }else if (op == 2){
             editar();
         }else if (op == 3){
-            
+            imprimirPos();
         }else if (op == 4){
-            
+            imprimirCompleta();
         }else if (op == 5){
-            
+            imprimirCientifico();
         }else if (op == 6){
-            
-        }
-        else if (op == 7){
-            
+            alimentar();
+        }else if (op == 7){
+            eliminar();
         }
     }
     public static void ingresar (){
@@ -104,10 +103,15 @@ public class Lab2P2_VictorValladares_12141026 {
         }
     }
     public static void imprimirPos(){
-        
+        System.out.print("Ingrese la posicion que desea imprimir: ");
+        int pos = lea.nextInt();
+        System.out.println(lista.get(pos).toString());
+        System.out.println("");
     }
     public static void imprimirCompleta(){
-        
+        for (Animales animales : lista){
+            System.out.println(animales.toString());
+        }
     }
     public static void imprimirCientifico(){
         
