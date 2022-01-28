@@ -20,7 +20,7 @@ public class Lab2P2_VictorValladares_12141026 {
         animal2 = new Animales("Panthera onca", "Jaguar", "Selvas", "Carne", "Un carnivoro pariente de las panteras, uno de los animales mas rapidos del mundo", "America", 15);
         lista.add(animal2);
         animal3 = new Animales("Orcinus orca", "Orca", "Oceanos", "Variedad de peces", "Animal maritimo que es de la familia de los delfines", "Alrededor del mundo pero especialmente en aguas frias", 30);
-        lista.add(animal2);
+        lista.add(animal3);
         do{
             realizar( menu() );
         }while(true);
@@ -92,6 +92,9 @@ public class Lab2P2_VictorValladares_12141026 {
             }
             pos++;
         }
+        if (pos == lista.size()){
+            pos -= 1;
+        }
         System.out.println("1. Todos los atributos");
         System.out.println("2. Solo una parte");
         System.out.print("Ingrese la opcion: ");
@@ -114,13 +117,42 @@ public class Lab2P2_VictorValladares_12141026 {
         }
     }
     public static void imprimirCientifico(){
-        
+        int pos = 0;
+        lea.nextLine();
+        System.out.print("Ingrese el nombre cientifico del animal que desea imprimir: ");
+        String nombre = lea.nextLine();
+        for (Animales animales : lista){
+            if (nombre.equals(animales.getNombreC())){
+                break;
+            }else{
+               pos++; 
+            }
+        }
+        if (pos == lista.size()){
+            pos -= 1;
+        }
+        System.out.println(lista.get(pos).toString());
+        System.out.println("");
     }
     public static void alimentar(){
         
     }
     public static void eliminar(){
-        
+        int pos = 0;
+        lea.nextLine();
+        System.out.print("Ingrese el nombre cientifico del animal que desea imprimir: ");
+        String nombre = lea.nextLine();
+        for (Animales animales : lista){
+            if (nombre.equals(animales.getNombreC())){
+                break;
+            }else{
+               pos++; 
+            }
+        }
+        if (pos == lista.size()){
+            pos -= 1;
+        }
+        lista.remove(pos);
     }
     public static void editarCompleto(int pos){
         lea.nextLine();
