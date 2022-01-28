@@ -30,4 +30,47 @@ public class Animales {
         this.geografica = geografica;
         this.vida = vida;
     }
+    
+    public void setNombreC(String nombreC){
+        this.nombreC = nombreC;
+    }
+    public String getNombreC(){
+        return nombreC;
+    }
+    public void setNombreComun(String nombreComun){
+        this.nombreComun = nombreComun;
+    }
+    public String getNombreComun(){
+        return nombreComun;
+    }
+    public void setHabitat(String habitat){
+        this.habitat = habitat;
+    }
+    public String getHabitat(){
+        return habitat;
+    }
+    public void setDescripcion(String descripcion){
+        this.descripcion = descripcion;
+    }
+    public String getDescripcion(){
+        return descripcion;
+    }
+    public void setAlimentacion(String alimentacion){
+        this.alimentacion = alimentacion;
+    }
+    public String getAlimentacion(){
+        return alimentacion;
+    }
+    public void setGeografica(String geografica){
+        this.geografica = geografica;
+    }
+    public String getGeografica(){
+        return geografica;
+    }
+    public void setVida(int vida){
+        this.vida = vida;
+    }
+    public int getVida(){
+        return vida;
+    }
 }
