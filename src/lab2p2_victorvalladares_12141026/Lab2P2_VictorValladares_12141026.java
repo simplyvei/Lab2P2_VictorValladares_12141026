@@ -34,6 +34,7 @@ public class Lab2P2_VictorValladares_12141026 {
                         "4. Imprimir lista completa\n" +
                         "5. Imprimir nombre por nombre cientifico\n" +
                         "6. Alimentar\n" +
+                        "7. Eliminar animal\n" +
                         "Ingrese la opcion: ");
         return lea.nextInt();
     }
@@ -43,7 +44,7 @@ public class Lab2P2_VictorValladares_12141026 {
         }else if (op == 1){
             ingresar();
         }else if (op == 2){
-            
+            editar();
         }else if (op == 3){
             
         }else if (op == 4){
@@ -53,11 +54,20 @@ public class Lab2P2_VictorValladares_12141026 {
         }else if (op == 6){
             
         }
+        else if (op == 7){
+            
+        }
     }
     public static void ingresar (){
         lea.nextLine();
         System.out.print("Nombre Cientifico: ");
         String nombreC = lea.nextLine();
+        for (Animales animales : lista){
+            if (animales.getNombreC().equals(nombreC)){
+                System.out.print("Nombre ingresado ya existe, intente de nuevo: ");
+                nombreC = lea.nextLine();
+            }
+        }
         System.out.print("Nombre Comun: ");
         String nombreComun = lea.nextLine();
         System.out.print("Habitat: ");
@@ -71,5 +81,97 @@ public class Lab2P2_VictorValladares_12141026 {
         System.out.print("Ingrese la vida del animal: ");
         int vida = lea.nextInt();
         lista.add(new Animales(nombreC, nombreComun, habitat, alimentacion, descripcion, geografica, vida));
+    }
+    public static void editar(){
+        int pos = 0;
+        lea.nextLine();
+        System.out.print("Ingrese el nombre cientifico del animal que desea editar: ");
+        String nombre = lea.nextLine();
+        for (Animales animales : lista){
+            if (animales.getNombreC().equals(nombre)){
+                break;
+            }
+            pos++;
+        }
+        System.out.println("1. Todos los atributos");
+        System.out.println("2. Solo una parte");
+        System.out.print("Ingrese la opcion: ");
+        int opcion = lea.nextInt();
+        if(opcion == 1){
+            editarCompleto(pos);
+        }else if(opcion == 2){
+            editarParte(pos);
+        }
+    }
+    public static void imprimirPos(){
+        
+    }
+    public static void imprimirCompleta(){
+        
+    }
+    public static void imprimirCientifico(){
+        
+    }
+    public static void alimentar(){
+        
+    }
+    public static void eliminar(){
+        
+    }
+    public static void editarCompleto(int pos){
+        lea.nextLine();
+        System.out.print("Nuevo nombre cientifico: ");
+        lista.get(pos).setNombreC(lea.nextLine());
+        System.out.print("Nuevo nombre comun: ");
+        lista.get(pos).setNombreComun(lea.nextLine());
+        System.out.print("Nuevo habitat: ");
+        lista.get(pos).setHabitat(lea.nextLine());
+        System.out.print("Nueva alimentacion: ");
+        lista.get(pos).setAlimentacion(lea.nextLine());
+        System.out.print("Nueva descripcion: ");
+        lista.get(pos).setDescripcion(lea.nextLine());
+        System.out.print("Nueva posicion geografica: ");
+        lista.get(pos).setGeografica(lea.nextLine());
+        System.out.print("Nueva vida: ");
+        lista.get(pos).setVida(lea.nextInt());
+    }
+    public static void editarParte(int pos){
+        lea.nextLine();
+        System.out.println("1. Nombre Cientifico");
+        System.out.println("2. Nombre Comun");
+        System.out.println("3. Habitat");
+        System.out.println("4. Alimentacion");
+        System.out.println("5. Descripcion");
+        System.out.println("6. Posicion Geografica");
+        System.out.println("7. Vida");
+        System.out.print("Ingrese la opcion: ");
+        int op = lea.nextInt();
+        if (op == 1){
+            System.out.print("Nuevo nombre cientifico: ");
+            lista.get(pos).setNombreC(lea.nextLine());
+        }else if (op == 2){
+            System.out.print("Nuevo nombre comun: ");
+            lista.get(pos).setNombreComun(lea.nextLine());
+        }
+        else if (op == 3){
+            System.out.print("Nuevo habitat: ");
+            lista.get(pos).setHabitat(lea.nextLine());
+        }
+        else if (op == 4){
+            System.out.print("Nueva alimentacion: ");
+            lista.get(pos).setAlimentacion(lea.nextLine());
+        }
+        else if (op == 5){
+            System.out.print("Nueva descripcion: ");
+            lista.get(pos).setDescripcion(lea.nextLine());
+        }
+        else if (op == 6){
+            System.out.print("Nueva posicion geografica: ");
+            lista.get(pos).setGeografica(lea.nextLine());
+        }
+        else if (op == 7){
+            System.out.print("Nueva vida: ");
+            lista.get(pos).setVida(lea.nextInt());
+        }
     }
 }
