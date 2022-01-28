@@ -80,6 +80,6 @@ public class Animales {
     
     @Override
     public String toString() {
-        return "Animales: \nNombre cientifico = "+nombreC+ "\nNombre comun = "+ nombreComun+ "\nHabitat = "+habitat+"\nAlimentacion = "+alimentacion+"\nDescripcion = "+ descripcion+"\nPosicion Geografica = "+geografica+"\nvida = "+vida;
+        return "Animal: \nNombre cientifico = "+nombreC+ "\nNombre comun = "+ nombreComun+ "\nHabitat = "+habitat+"\nAlimentacion = "+alimentacion+"\nDescripcion = "+ descripcion+"\nPosicion Geografica = "+geografica+"\nvida = "+vida;
     }
 }

@@ -36,7 +36,9 @@ public class Lab2P2_VictorValladares_12141026 {
                         "6. Alimentar\n" +
                         "7. Eliminar animal\n" +
                         "Ingrese la opcion: ");
-        return lea.nextInt();
+        int op = lea.nextInt();
+        System.out.println("-----------------------------------------------");
+        return op;
     }
     public static void realizar(int op){
         if (op == 0){
@@ -114,6 +116,7 @@ public class Lab2P2_VictorValladares_12141026 {
     public static void imprimirCompleta(){
         for (Animales animales : lista){
             System.out.println(animales.toString());
+            System.out.println("-----------------------------------------------");
         }
     }
     public static void imprimirCientifico(){
@@ -129,18 +132,27 @@ public class Lab2P2_VictorValladares_12141026 {
             }
         }
         if (pos == lista.size()){
-            pos -= 1;
+            pos --;
         }
         System.out.println(lista.get(pos).toString());
         System.out.println("");
     }
     public static void alimentar(){
-        
+        System.out.print("Ingrese la posicion del animal que va a comer: ");
+        int pos1 = lea.nextInt();
+        System.out.print("Ingrese la posicion del animal que va a ser comido: ");
+        int pos2 = lea.nextInt();
+        try{
+            lista.get(pos1).setVida(lista.get(pos2).getVida()+lista.get(pos1).getVida());
+            lista.remove(pos2);
+        }catch(Exception e){
+            System.out.println("Una de las posiciones ingresadas no son validas");
+        }
     }
     public static void eliminar(){
         int pos = 0;
         lea.nextLine();
-        System.out.print("Ingrese el nombre cientifico del animal que desea imprimir: ");
+        System.out.print("Ingrese el nombre cientifico del animal que desea eliminar: ");
         String nombre = lea.nextLine();
         for (Animales animales : lista){
             if (nombre.equals(animales.getNombreC())){
@@ -150,7 +162,7 @@ public class Lab2P2_VictorValladares_12141026 {
             }
         }
         if (pos == lista.size()){
-            pos -= 1;
+            pos --;
         }
         lista.remove(pos);
     }
