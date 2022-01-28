@@ -68,9 +68,18 @@ public class Animales {
         return geografica;
     }
     public void setVida(int vida){
-        this.vida = vida;
+        if (vida > 0){
+            this.vida = vida;
+        }else{
+            System.out.println("Opcion ingresada no es valida");
+        }
     }
     public int getVida(){
         return vida;
+    }
+    
+    @Override
+    public String toString() {
+        return "Animales : [Nombre cientifico = "+nombreC+ ", Nombre comun = "+ nombreComun+ ", Habitat = "+habitat+", Alimentacion = "+alimentacion+", Descripcion = "+ descripcion+", Posicion Geografica = "+geografica+", vida = "+vida+"]";
     }
 }
